@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Rathijit Adhikary — Design Manager building UX strategy, enterprise design systems and AI-led design practice. 10+ years leading distributed teams across finance, healthcare and technology." />
+    <meta name="author" content="Rathijit Adhikary" />
+    <meta property="og:title" content="Rathijit Adhikary — Design Manager & UX Strategist" />
+    <meta property="og:description" content="I build design teams, systems, and cultures that ship products people trust." />
+    <meta property="og:type" content="website" />
+    <title>Rathijit Adhikary — Design Manager · UX Strategy</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23000000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ERA%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- Libraries (UMD globals, order preserved via defer) -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script defer src="./main.js"></script>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      // Always start at the hero — disable the browser's scroll restoration
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+  </head>
+  <body>
+    <!-- PRELOADER / SPLASH -->
+    <div class="loader" id="loader">
+      <div class="loader__top">
+        <span class="loader__tag">Portfolio ’26</span>
+        <span class="loader__tag">Rathijit Adhikary</span>
+      </div>
+      <div class="loader__center">
+        <h1 class="loader__welcome" aria-label="Welcome">
+          <span class="loader__welcome-base" aria-hidden="true">Welcome</span>
+          <span class="loader__welcome-fill" id="welcomeFill" aria-hidden="true">Welcome</span>
+        </h1>
+      </div>
+      <div class="loader__bottom">
+        <span class="loader__status">Loading experience</span>
+        <span class="loader__count" id="loaderCount">0</span>
+      </div>
+      <div class="loader__bar"><span class="loader__fill" id="loaderFill"></span></div>
+    </div>
+
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+      <a href="#top" class="nav__brand" data-magnetic>
+        <span class="nav__mark">RA</span>
+        <span class="nav__name">Rathijit Adhikary</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#voices">Voices</a>
+      </nav>
+      <a href="#contact" class="nav__cta" data-magnetic>Let's talk</a>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <canvas class="hero__canvas" id="webgl" aria-hidden="true"></canvas>
+        <div class="hero__glow" aria-hidden="true"></div>
+
+        <div class="hero__inner" data-parallax-root>
+          <p class="hero__eyebrow reveal-line"><span>Design Manager · UX Strategy · AI-Led Practice</span></p>
+          <h1 class="hero__title">
+            <span class="line"><span class="word">Design</span> <span class="word">that</span></span>
+            <span class="line"><span class="word accent-word">people</span> <span class="word">trust.</span></span>
+          </h1>
+          <p class="hero__lead reveal-line">
+            <span>I'm <strong>Rathijit Adhikary</strong> — I build design teams, systems and cultures
+            that ship enterprise products people trust. 10+ years turning ambiguous
+            problems into measurable outcomes.</span>
+          </p>
+          <div class="hero__actions reveal-line">
+            <a href="#work" class="btn btn--solid" data-magnetic>View selected work</a>
+            <a href="#contact" class="btn btn--ghost" data-magnetic>Get in touch</a>
+          </div>
+        </div>
+
+        <!-- Floating mouse-reactive UI cards -->
+        <div class="floaters" aria-hidden="true">
+          <div class="floatcard floatcard--a" data-depth="0.06">
+            <span class="floatcard__k">Design consistency</span>
+            <span class="floatcard__v">+70<em>%</em></span>
+          </div>
+          <div class="floatcard floatcard--b" data-depth="0.11">
+            <span class="floatcard__k">Faster delivery</span>
+            <span class="floatcard__v">+20<em>%</em></span>
+          </div>
+          <div class="floatcard floatcard--c" data-depth="0.09">
+            <span class="floatcard__dot"></span>
+            <span class="floatcard__k2">Available for design leadership</span>
+          </div>
+        </div>
+
+        <a href="#work" class="hero__scroll" aria-label="Scroll to work">
+          <span>Scroll</span>
+          <span class="hero__scrollline"></span>
+        </a>
+      </section>
+
+      <!-- CLIENT MARQUEE -->
+      <section class="marquee-wrap" aria-label="Clients">
+        <div class="marquee">
+          <div class="marquee__track">
+            <span>Haleon</span><i>✳</i><span>Finacle</span><i>✳</i><span>Adidas</span><i>✳</i><span>Pfizer</span><i>✳</i><span>Siemens</span><i>✳</i><span>Intuit</span><i>✳</i><span>AssistEdge</span><i>✳</i><span>Manipal</span><i>✳</i><span>Amadeus</span><i>✳</i><span>[24]7.ai</span><i>✳</i><span>Landmark</span><i>✳</i><span>Lulu</span><i>✳</i>
+            <span>Haleon</span><i>✳</i><span>Finacle</span><i>✳</i><span>Adidas</span><i>✳</i><span>Pfizer</span><i>✳</i><span>Siemens</span><i>✳</i><span>Intuit</span><i>✳</i><span>AssistEdge</span><i>✳</i><span>Manipal</span><i>✳</i><span>Amadeus</span><i>✳</i><span>[24]7.ai</span><i>✳</i><span>Landmark</span><i>✳</i><span>Lulu</span><i>✳</i>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT / INTRO -->
+      <section class="about" id="about">
+        <div class="section-head">
+          <span class="section-index">01</span>
+          <span class="section-label">Introduction</span>
+        </div>
+        <div class="about__grid">
+          <h2 class="about__statement" data-reveal-lines>
+            Over a decade leading cross-functional design teams — balancing
+            hands-on craft with people management and strategic UX across
+            <em>financial services, healthcare, e-commerce</em> and technology.
+          </h2>
+          <div class="about__aside" data-reveal>
+            <p>Currently Associate Manager of Experience Design at Infosys Wongdoody,
+              where I run multiple concurrent engagements end-to-end, coach designers
+              to grow in craft and ownership, and set accessibility and design-system
+              standards adopted across global client organisations.</p>
+            <p class="about__signoff">— A design leader first, people manager second.</p>
+          </div>
+        </div>
+
+        <div class="stats" data-stagger>
+          <div class="stat"><span class="stat__num" data-count="10" data-suffix="+">0</span><span class="stat__label">Years of practice</span></div>
+          <div class="stat"><span class="stat__num" data-count="10" data-suffix="+">0</span><span class="stat__label">Designers mentored</span></div>
+          <div class="stat"><span class="stat__num" data-count="70" data-suffix="%">0</span><span class="stat__label">Consistency gains</span></div>
+          <div class="stat"><span class="stat__num" data-count="15" data-suffix="%">0</span><span class="stat__label">Project success uplift</span></div>
+        </div>
+      </section>
+
+      <!-- PILLARS -->
+      <section class="pillars" id="pillars">
+        <div class="section-head">
+          <span class="section-index">02</span>
+          <span class="section-label">What I bring</span>
+        </div>
+        <div class="pillars__grid" data-stagger>
+          <article class="pillar">
+            <span class="pillar__no">01</span>
+            <h3>AI-informed practice</h3>
+            <p>Integrating AI tools — Topaz Fabric, Cursor, Claude — into design workflows and teaching teams to use them effectively.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar__no">02</span>
+            <h3>Team leadership</h3>
+            <p>Mentored teams of 6+ designers across distributed environments — creating clarity, removing blockers and growing people.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar__no">03</span>
+            <h3>End-to-end ownership</h3>
+            <p>Led engagements from discovery to handoff — research, journey mapping, prototyping, usability testing and dev support.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar__no">04</span>
+            <h3>Design systems</h3>
+            <p>Architected Finacle's banking design system unifying multiple product tracks — with full documentation, accessibility and engineering integration.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar__no">05</span>
+            <h3>Stakeholder alignment</h3>
+            <p>Translate ambiguous problems into design direction with PMs, engineers and executives — and back decisions with data.</p>
+          </article>
+          <article class="pillar">
+            <span class="pillar__no">06</span>
+            <h3>Full-stack sensibility</h3>
+            <p>Production-ready HTML/CSS experience that bridges design intent and engineering reality.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- WORK / PROJECTS -->
+      <section class="work" id="work">
+        <div class="section-head">
+          <span class="section-index">03</span>
+          <span class="section-label">Selected work</span>
+        </div>
+
+        <article class="project" data-project>
+          <div class="project__media">
+            <div class="project__frame" data-tilt>
+              <div class="mock mock--dashboard">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__body">
+                  <div class="mock__row"><div class="mock__kpi"><b>205</b><i>HCPs engaged</i></div><div class="mock__kpi"><b>120</b><i>Webinars</i></div><div class="mock__kpi"><b>180</b><i>Consent rate</i></div></div>
+                  <div class="mock__funnel"><span style="--w:100%"></span><span style="--w:78%"></span><span style="--w:54%"></span><span style="--w:33%"></span><span style="--w:21%"></span></div>
+                  <div class="mock__bars"><span style="--h:40%"></span><span style="--h:70%"></span><span style="--h:52%"></span><span style="--h:88%"></span><span style="--h:63%"></span><span style="--h:75%"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <span class="project__num">01 — Financial · Data strategy</span>
+            <h3 class="project__title">Omniverse — Marketing transformation through customer-centric data</h3>
+            <p class="project__desc">A unified, insight-led Power&nbsp;BI analytics experience for Haleon that turned fragmented dashboards into clear, funnel-first decisions — Awareness → Consideration → Intent → Conversion → Retention — across Executive, Channel and an AI-driven Suggestion view.</p>
+            <ul class="project__tags"><li>UX + AI</li><li>Power BI</li><li>Vibe coding</li><li>Accessibility</li><li>Topaz Fabric</li></ul>
+            <div class="project__metrics">
+              <div><b>3&rarr;1</b><i>reports unified</i></div>
+              <div><b>WCAG&nbsp;AA</b><i>compliance met</i></div>
+              <div><b>Zero</b><i>rework post-handoff</i></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--reverse" data-project>
+          <div class="project__media">
+            <div class="project__frame" data-tilt>
+              <div class="mock mock--app">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__app">
+                  <div class="mock__side"><i></i><i></i><i></i><i></i></div>
+                  <div class="mock__main">
+                    <div class="mock__card"><b></b><em></em><em class="short"></em></div>
+                    <div class="mock__list"><span></span><span></span><span></span><span></span></div>
+                  </div>
+                  <div class="mock__panel"><i class="avatar"></i><b></b><em></em><em class="short"></em></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <span class="project__num">02 — Healthcare · Service</span>
+            <h3 class="project__title">AssistEdge — Customer support application</h3>
+            <p class="project__desc">A web platform where customers call, chat and video their support agents on policies and claims. We rebuilt the agent journey into a streamlined flow — then designed <em>and</em> shipped the clickable, production-ready HTML prototype for the client.</p>
+            <ul class="project__tags"><li>Full-stack design</li><li>Journey mapping</li><li>Usability testing</li><li>Figma</li><li>Miro</li></ul>
+            <div class="project__metrics">
+              <div><b>Team&nbsp;of&nbsp;4</b><i>designers led</i></div>
+              <div><b>Dev-ready</b><i>HTML/CSS handoff</i></div>
+              <div><b>Faster</b><i>agent task flow</i></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" data-project>
+          <div class="project__media">
+            <div class="project__frame" data-tilt>
+              <div class="mock mock--ds">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__ds">
+                  <div class="mock__swatches"><i style="--c:#ffffff"></i><i style="--c:#c7c7cc"></i><i style="--c:#8a8a90"></i><i style="--c:#525258"></i><i style="--c:#2a2a30"></i></div>
+                  <div class="mock__comp"><span class="pill"></span><span class="pill pill--outline"></span></div>
+                  <div class="mock__type"><b>Aa</b><em></em><em class="short"></em></div>
+                  <div class="mock__grid4"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <span class="project__num">03 — Banking · Design systems</span>
+            <h3 class="project__title">Finacle — Banking design system</h3>
+            <p class="project__desc">Multiple product tracks, each with its own design language. We unified them under one cohesive, technology-agnostic system — atoms to molecules — with documented components, WCAG-AA accessibility and production-ready code for the engineering teams.</p>
+            <ul class="project__tags"><li>Design system</li><li>Accessibility</li><li>Documentation</li><li>Adobe XD</li><li>HTML/CSS</li></ul>
+            <div class="project__metrics">
+              <div><b>+70%</b><i>consistency efficiency</i></div>
+              <div><b>All tracks</b><i>unified language</i></div>
+              <div><b>Cross-platform</b><i>ready assets</i></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="project project--reverse" data-project>
+          <div class="project__media">
+            <div class="project__frame" data-tilt>
+              <div class="mock mock--survey">
+                <div class="mock__bar"><span></span><span></span><span></span></div>
+                <div class="mock__survey">
+                  <div class="mock__q"><b>16</b><em>Your opinion, your engagement</em></div>
+                  <div class="mock__choices"><i></i><i></i><i></i><i></i></div>
+                  <div class="mock__progress"><span style="--p:62%"></span></div>
+                  <div class="mock__badge"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project__info">
+            <span class="project__num">04 — Employee experience</span>
+            <h3 class="project__title">JUST16 — Engaging employee feedback</h3>
+            <p class="project__desc">A lengthy 16-question survey was killing participation. We broke it into playful sets, tied character animations to answer choices and added a badge system to celebrate progress — a mobile-first, gamified experience that lifted honest feedback.</p>
+            <ul class="project__tags"><li>Creative direction</li><li>Interactivity</li><li>Gamification</li><li>Mobile-first</li></ul>
+            <div class="project__metrics">
+              <div><b>Mobile-1st</b><i>pioneered in 2017</i></div>
+              <div><b>Badges</b><i>drove completion</i></div>
+              <div><b>Higher</b><i>participation</i></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- EXPERTISE -->
+      <section class="expertise" id="expertise">
+        <div class="section-head">
+          <span class="section-index">04</span>
+          <span class="section-label">Capabilities</span>
+        </div>
+        <div class="expertise__grid">
+          <div class="expertise__col" data-reveal>
+            <h4>Focus areas</h4>
+            <ul class="taglist">
+              <li>AI in Design</li><li>Strategic Design Thinking</li><li>User Experience</li>
+              <li>Prototyping</li><li>Visual Design</li><li>Accessibility</li>
+              <li>Interaction Design</li><li>User Research</li><li>Usability Testing</li>
+              <li>Team Management</li>
+            </ul>
+          </div>
+          <div class="expertise__col" data-reveal>
+            <h4>Tools</h4>
+            <ul class="taglist">
+              <li>Figma</li><li>Adobe XD</li><li>Photoshop</li><li>Miro</li>
+              <li>Jira</li><li>Confluence</li><li>Topaz Fabric</li>
+              <li>Claude</li><li>Cursor</li>
+            </ul>
+          </div>
+          <div class="expertise__col" data-reveal>
+            <h4>Full-stack</h4>
+            <ul class="taglist">
+              <li>HTML</li><li>CSS</li><li>SCSS</li><li>JavaScript</li>
+              <li>Responsive design</li><li>WCAG 2.1 AA</li><li>Design-to-dev handoff</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE TIMELINE -->
+      <section class="experience" id="experience">
+        <div class="section-head">
+          <span class="section-index">05</span>
+          <span class="section-label">Experience</span>
+        </div>
+        <ol class="timeline" data-stagger>
+          <li class="tl">
+            <span class="tl__year">2025 — Now</span>
+            <div class="tl__body">
+              <h3>Associate Manager, Experience Design</h3>
+              <span class="tl__org">Infosys Wongdoody · Bangalore</span>
+              <p>Lead and mentor 6+ designers across concurrent enterprise engagements; drive AI adoption and align UX strategy to measurable business outcomes.</p>
+            </div>
+          </li>
+          <li class="tl">
+            <span class="tl__year">2022 — 2024</span>
+            <div class="tl__body">
+              <h3>Senior Lead Experience Designer</h3>
+              <span class="tl__org">Infosys Wongdoody · Bangalore</span>
+              <p>Improved design &amp; execution speed by 10% through UX consultation; ran design audits that boosted project success rate by 15%.</p>
+            </div>
+          </li>
+          <li class="tl">
+            <span class="tl__year">2020 — 2022</span>
+            <div class="tl__body">
+              <h3>Lead Experience Designer</h3>
+              <span class="tl__org">Infosys Wongdoody · Bangalore</span>
+              <p>Led the Finacle Design System (+70% consistency) and up-skilled designers in front-end for 20% faster, smoother deliverables.</p>
+            </div>
+          </li>
+          <li class="tl">
+            <span class="tl__year">2019 — 2020</span>
+            <div class="tl__body">
+              <h3>Senior Designer, Experience Design</h3>
+              <span class="tl__org">Infosys · Bangalore</span>
+              <p>Built a technology-agnostic design system enabling custom implementations and a 20% improvement in functional workflows.</p>
+            </div>
+          </li>
+          <li class="tl">
+            <span class="tl__year">2016 — 2019</span>
+            <div class="tl__body">
+              <h3>Creative Frontend Developer</h3>
+              <span class="tl__org">Mad About Digital · Bangalore</span>
+              <p>Designed and built interactive websites, landing pages and emailers with clean, reusable code and smooth project handoffs.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="voices" id="voices">
+        <div class="section-head">
+          <span class="section-index">06</span>
+          <span class="section-label">Voices</span>
+        </div>
+        <div class="voices__grid" data-fade>
+          <figure class="quote quote--1">
+            <span class="quote__no">01</span>
+            <blockquote>Rathi has been very committed toward delivering quality output on time — even on very short notice he delivered and helped us with our demos. His determination to finish the task shows he's ready to take on new challenges and grow.</blockquote>
+          </figure>
+          <figure class="quote quote--2">
+            <span class="quote__no">02</span>
+            <blockquote>Delivered prompt support for BOFA's Enterprise Payment solution, mentoring junior designers on UI &amp; accessibility while ensuring on-time releases. He understands the problem statement and provides the right solution.</blockquote>
+          </figure>
+          <figure class="quote quote--3">
+            <span class="quote__no">03</span>
+            <blockquote>Rathijit and his team have consistently demonstrated exceptional reliability and dedication — highly regarded for professionalism, a positive attitude and a collaborative approach, always willing to support and share expertise.</blockquote>
+          </figure>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="contact" id="contact">
+        <div class="contact__inner">
+          <p class="contact__eyebrow">A design unicorn — available for design leadership roles</p>
+          <h2 class="contact__title" data-reveal-lines>Let's build products<br/>people trust.</h2>
+          <a class="contact__mail" href="mailto:rathiadhikary@gmail.com" data-magnetic>rathiadhikary@gmail.com</a>
+          <div class="contact__links">
+            <a href="mailto:rathiadhikary@gmail.com">Email</a>
+            <a href="tel:+919738893655">+91 97388 93655</a>
+            <a href="https://www.linkedin.com/in/rathijitadhikary/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <footer class="foot">
+          <span>© <span id="year">2026</span> Rathijit Adhikary</span>
+          <span>Kolkata / Bangalore, India</span>
+          <a href="#top">Back to top ↑</a>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
