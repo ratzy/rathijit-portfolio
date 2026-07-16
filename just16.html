@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="JUST16 — turning a 16-question employee survey nobody finished into a feedback experience people wanted to complete. A case study by Rathijit Adhikary." />
+    <meta name="author" content="Rathijit Adhikary" />
+    <meta property="og:title" content="JUST16 — Case Study · Rathijit Adhikary" />
+    <meta property="og:description" content="Sixteen questions nobody wanted to answer — made into a moment people finished." />
+    <meta property="og:type" content="article" />
+    <title>JUST16 — Case Study · Rathijit Adhikary</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23000000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ERA%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script defer src="./main.js"></script>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+  </head>
+  <body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav is-scrolled" id="nav">
+      <a href="index.html" class="nav__brand" data-magnetic>
+        <span class="nav__mark">RA</span>
+        <span class="nav__name">Rathijit Adhikary</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#voices">Voices</a>
+      </nav>
+      <a href="index.html#contact" class="nav__cta" data-magnetic>Let's talk</a>
+    </header>
+
+    <main class="casepage" id="top">
+      <article class="case__wrap">
+        <a href="index.html#work" class="case__back" data-reveal data-magnetic>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Back to selected work</span>
+        </a>
+
+        <!-- HERO -->
+        <header class="case__hero" data-stagger>
+          <span class="case__eyebrow">Case study · Employee experience</span>
+          <h1 class="case__title">JUST16</h1>
+          <p class="case__sub">Employee experience · [24]7.ai · Creative direction + build</p>
+          <p class="case__lead">Sixteen questions nobody wanted to answer.</p>
+          <dl class="case__meta">
+            <div><dt>Role</dt><dd>Creative direction &amp; front-end build</dd></div>
+            <div><dt>Craft</dt><dd>Illustration · animation · gamification</dd></div>
+            <div><dt>Tools</dt><dd>Photoshop · VS&nbsp;Code · Asana</dd></div>
+            <div><dt>Note</dt><dd>Mobile-first, in 2017</dd></div>
+          </dl>
+        </header>
+
+        <!-- 1. FUN IS A CONSTRAINT -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Fun is a design constraint</h2>
+          <p class="case__p">Most enterprise design optimises for efficiency. This one optimised for <em>willingness</em> — because a survey nobody finishes produces no data, no matter how well-structured the questions are.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-welcome" aria-hidden="true">
+            <div class="viz-login__bar"><span></span><span></span><span></span></div>
+            <div class="wel__body">
+              <span class="wel__hi">Hello [24]7ite!</span>
+              <span class="wel__16">16</span>
+              <span class="wel__sub">Eight minutes of your time — and we knew we had to earn every one.</span>
+              <div class="wel__cast"><span class="figly"><i class="head"></i><i class="body"></i></span><span class="figly"><i class="head"></i><i class="body"></i></span><span class="figly"><i class="head"></i><i class="body"></i></span></div>
+              <span class="wel__btn">Let's go</span>
+            </div>
+          </div>
+          <figcaption>Welcome screen — eight minutes of your time, and we knew we had to earn every one.</figcaption>
+        </figure>
+
+        <!-- 2. THE PROBLEM -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The problem</h2>
+          <p class="case__p">[24]7.ai's employee feedback process was lengthy and cumbersome. Participation was low — which meant the company couldn't gather the insights it needed to actually improve the workplace. A feedback loop broken at the first step.</p>
+          <blockquote class="case__quote case__quote--sm">16 questions × 4 options each — layered with detailed sub-options. That's not a survey. That's an interrogation.</blockquote>
+          <p class="case__p">The business question: how do we make feedback fast enough that people actually give it — so the organisation can make data-driven decisions on work-life balance, communication channels and internal resources?</p>
+        </section>
+
+        <!-- 3. FEEDBACK FATIGUE -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The real problem: feedback fatigue</h2>
+          <p class="case__p">We named it early, because naming it changed what we were solving. The issue was never the questions — the questions were fine. The issue was the <em>experience of being asked</em> — a tedious drill-down that signalled <em>this will take forever</em> before you'd answered one.</p>
+          <p class="case__p"><b>So the design problem became: how do you make an obligation feel like a moment?</b></p>
+        </section>
+
+        <!-- 4. THREE MOVES -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Move 01 — Break the mountain into hills</h2>
+          <p class="case__p">We implemented a categorised feedback system. Each question offered four distinct answer types with clear options — structured enough to analyse responses and identify trends, small enough that no single screen felt like work.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-question" aria-hidden="true">
+            <div class="q__stmt">“I work in a healthy professional environment”</div>
+            <div class="q__choices">
+              <span class="q__choice"><span class="figly"><i class="head"></i><i class="body"></i></span><em>Strongly agree</em></span>
+              <span class="q__choice"><span class="figly"><i class="head"></i><i class="body"></i></span><em>Agree</em></span>
+              <span class="q__choice"><span class="figly"><i class="head"></i><i class="body"></i></span><em>Disagree</em></span>
+              <span class="q__choice"><span class="figly"><i class="head"></i><i class="body"></i></span><em>Strongly disagree</em></span>
+            </div>
+          </div>
+          <figcaption>Question screen — four answers. One decision. Next.</figcaption>
+        </figure>
+
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Move 02 — Give the answers a face</h2>
+          <p class="case__p">We collaborated with an illustrator and animator to build a fun, energetic interface — with character animations tied to each answer choice. Why characters, not copy: an abstract statement invites an abstract answer. A character visibly <em>living</em> that answer invites recognition. People stopped evaluating a sentence and started picking the version of the office they knew.</p>
+          <p class="case__p">That's the whole trick — the relatable character did the emotional translation the words couldn't.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-scene" aria-hidden="true">
+            <div class="scene__art">
+              <span class="scene__sun"></span>
+              <span class="scene__plant"></span>
+              <span class="scene__desk"></span>
+              <span class="figly figly--lg" style="left:14%"><i class="head"></i><i class="body"></i></span>
+              <span class="figly figly--lg" style="left:40%"><i class="head"></i><i class="body"></i></span>
+              <span class="figly figly--lg" style="left:66%"><i class="head"></i><i class="body"></i></span>
+            </div>
+            <div class="scene__panel">
+              <span class="scene__q">“My team celebrates wins together”</span>
+              <span class="scene__opt on"></span><span class="scene__opt"></span><span class="scene__opt"></span>
+            </div>
+          </div>
+          <figcaption>Full character scene — the illustration is the argument. People picked the version of the office they recognised.</figcaption>
+        </figure>
+
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Move 03 — Celebrate the small win</h2>
+          <p class="case__p">Badges awarded for completing sets of questions — acknowledging small achievements, building a sense of accomplishment. Gamified, and effective at motivating employees to progress further and complete the entire form.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-badgemodal" aria-hidden="true">
+            <div class="bm__card">
+              <span class="bm__gem"></span>
+              <b>Nicely done!</b>
+              <em>You've cleared a set — three badges to go.</em>
+              <span class="bm__btn">Keep going</span>
+            </div>
+          </div>
+          <figcaption>Badge moment — a reward every few questions, not one at the end.</figcaption>
+        </figure>
+
+        <section class="case__section" data-reveal>
+          <p class="case__p">Why mid-flow, not end-of-flow: a reward at the finish only motivates people already near it. A reward every few questions gives you a reason to take the next step — which is the only step that ever matters in a drop-off problem.</p>
+        </section>
+
+        <!-- 5. TRUST -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Trust, made visible</h2>
+          <p class="case__p">We fostered honest feedback by putting transparent progress indicators and readily accessible badges inside the flow. Employees could track progress throughout, seeing completed sections and the badges still available.</p>
+          <p class="case__p">The logic: people give guarded answers when they don't know how much more is coming. <em>Showing the end makes the middle safe.</em> Transparency wasn't a nicety — it was what made honesty possible.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-progress" aria-hidden="true">
+            <div class="pg__meta"><span>Section 3 of 5</span><span>10 of 16 answered</span></div>
+            <div class="pg__bar"><span style="--p:62%"></span></div>
+            <div class="pg__badges">
+              <i class="earned"></i><i class="earned"></i><i></i><i></i><i></i>
+            </div>
+          </div>
+          <figcaption>Progress + badges — completed sections and the rewards still available, always in view.</figcaption>
+        </figure>
+
+        <!-- 6. MOBILE-FIRST -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Mobile-first, in 2017</h2>
+          <p class="case__p">We designed for the small screen first and scaled up — before that was standard practice. The constraint that forced invention: screen-size limits made the existing interaction model impossible on phones. So we built a time-selection behaviour for phones, keeping the experience smooth and intuitive across every platform.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-devices" aria-hidden="true">
+            <div class="dev dev--phone"><span class="dev__q"></span><span class="dev__o on"></span><span class="dev__o"></span><span class="dev__o"></span></div>
+            <div class="dev dev--tablet"><span class="dev__q"></span><span class="dev__o on"></span><span class="dev__o"></span><span class="dev__o"></span><span class="dev__o"></span></div>
+            <div class="dev dev--desktop"><span class="dev__bar"></span><div class="dev__body"><span class="dev__q"></span><div class="dev__grid"><i class="on"></i><i></i><i></i><i></i></div></div></div>
+          </div>
+          <figcaption>Phone first — everything else scaled up from there.</figcaption>
+        </figure>
+
+        <!-- 7. WHAT I DID -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">What I did</h2>
+          <p class="case__p">Creative direction — driving the concept, working with the illustrator and animator, and shaping an approach grounded in a deep understanding of user behaviour. Built in VS&nbsp;Code. Managed in Asana. Visuals in Photoshop.</p>
+        </section>
+
+        <!-- 8. OUTCOMES -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Outcomes</h2>
+          <div class="case__outcomes">
+            <div><b>16 → sets</b><span>Survey restructured to break drop-off</span></div>
+            <div><b>Characters</b><span>Tied to every answer choice</span></div>
+            <div><b>Badges</b><span>Progress driving completion mid-flow</span></div>
+            <div><b>Mobile-first</b><span>Pioneered in 2017, scaled to desktop</span></div>
+          </div>
+          <h2 class="case__h" style="margin-top:2.4em">What changed</h2>
+          <p class="case__p">A feedback form became a feedback experience. Employees stopped enduring the survey and started finishing it — which meant [24]7.ai finally got the sentiment data it had been asking for all along.</p>
+        </section>
+
+        <!-- 9. REFLECTION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">What I'd do differently</h2>
+          <p class="case__p">“Significantly increased” is the most honest thing I can say — and it isn't good enough. I know participation rose. I don't know from what, to what. We never baselined completion rate before launch, so the thing we set out to fix is the one number I can't show you.</p>
+          <p class="case__p">I'd also research the badges properly. Gamification is easy to believe in and hard to prove — I never isolated whether the badges drove completion, or whether the characters did all the work and the badges just came along for the ride.</p>
+        </section>
+
+        <footer class="case__foot" data-reveal>
+          <a class="btn btn--solid" href="index.html#work" data-magnetic>← Back to work</a>
+          <a class="btn btn--ghost" href="mailto:rathiadhikary@gmail.com?subject=I%20would%20like%20to%20know%20more%20about%20JUST16" data-magnetic>Discuss this project</a>
+        </footer>
+      </article>
+
+      <!-- Prev / Next project -->
+      <nav class="case-nav" data-reveal aria-label="More projects">
+        <a class="case-nav__item case-nav__item--prev" href="finacle.html">
+          <span class="case-nav__label"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Previous project</span>
+          <span class="case-nav__title">Finacle</span>
+          <span class="case-nav__cat">C — Banking · Design systems</span>
+        </a>
+        <a class="case-nav__item case-nav__item--next case-nav__item--outro" href="index.html#contact">
+          <span class="case-nav__label">Let's connect <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="case-nav__outro">Glad you got a chance to peek at some of my work! Intrigued? Let's connect and dive into the stories behind the pixels.</span>
+        </a>
+      </nav>
+
+      <footer class="foot" style="max-width:880px;margin:0 auto;padding-inline:clamp(20px,5vw,40px)">
+        <span>© <span id="year">2026</span> Rathijit Adhikary</span>
+        <span>Kolkata / Bangalore, India</span>
+        <a href="index.html#top">Home ↑</a>
+      </footer>
+    </main>
+  </body>
+</html>

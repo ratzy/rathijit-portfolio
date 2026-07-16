@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Finacle — one design language for a bank that spoke four. A technology-agnostic, accessible banking design system by Rathijit Adhikary." />
+    <meta name="author" content="Rathijit Adhikary" />
+    <meta property="og:title" content="Finacle — Case Study · Rathijit Adhikary" />
+    <meta property="og:description" content="One language for a bank that spoke four — a technology-agnostic, accessible banking design system." />
+    <meta property="og:type" content="article" />
+    <title>Finacle — Case Study · Rathijit Adhikary</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23000000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ERA%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script defer src="./main.js"></script>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+  </head>
+  <body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav is-scrolled" id="nav">
+      <a href="index.html" class="nav__brand" data-magnetic>
+        <span class="nav__mark">RA</span>
+        <span class="nav__name">Rathijit Adhikary</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#voices">Voices</a>
+      </nav>
+      <a href="index.html#contact" class="nav__cta" data-magnetic>Let's talk</a>
+    </header>
+
+    <main class="casepage" id="top">
+      <article class="case__wrap">
+        <a href="index.html#work" class="case__back" data-reveal data-magnetic>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Back to selected work</span>
+        </a>
+
+        <!-- HERO -->
+        <header class="case__hero" data-stagger>
+          <span class="case__eyebrow">Case study · Banking · Design systems</span>
+          <h1 class="case__title">Finacle</h1>
+          <p class="case__sub">Banking design system · Design Partner</p>
+          <p class="case__lead">One language for a bank that spoke four.</p>
+          <dl class="case__meta">
+            <div><dt>Role</dt><dd>Design Partner — strategy to release</dd></div>
+            <div><dt>Scope</dt><dd>Technology-agnostic design system</dd></div>
+            <div><dt>Standard</dt><dd>WCAG 2.1 AA, built in</dd></div>
+            <div><dt>Focus</dt><dd>Systems · Accessibility · Adoption</dd></div>
+          </dl>
+        </header>
+
+        <!-- 1. PRODUCT-SHAPED -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The most product-shaped thing I've built</h2>
+          <p class="case__p">A design system isn't a project. It's a product — with users, a roadmap, a versioning story and a support burden — and its users are the hardest audience you'll ever design for, because they're designers and engineers who already have opinions.</p>
+          <p class="case__p">This is the one I'd point to first.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-fds" aria-hidden="true">
+            <div class="viz-login__bar"><span></span><span></span><span></span></div>
+            <div class="fds__body">
+              <span class="fds__kicker">Finacle Design System</span>
+              <span class="fds__h">One stop solution for all your design needs</span>
+              <span class="fds__btn">Explore</span>
+              <div class="fds__chips"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <figcaption>FDS landing page — a design system, marketed to its own users.</figcaption>
+        </figure>
+
+        <!-- 2. PROBLEM -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The problem</h2>
+          <p class="case__p">Finacle is cloud-based online banking — onboarding, sales, service, engagement — with tailored UI for retail, SME and corporate customers. Multiple product tracks, each with its own design language.</p>
+          <p class="case__p">The same dropdown behaved differently in three places. The same action lived in three positions. <em>Customers moving between products experienced them as three different banks.</em></p>
+          <blockquote class="case__quote">How do we unify every track under one language — and raise usability with accessibility built in, not bolted on?</blockquote>
+          <p class="case__p">The constraint that shaped everything: this had to be <b>technology-agnostic</b>. Tracks ran on different frameworks. A system that only worked in one stack would fracture the moment it met reality.</p>
+        </section>
+
+        <!-- 3. HARDER THAN IT LOOKS -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Why this problem is harder than it looks</h2>
+          <p class="case__p">You cannot mandate a design system into existence. Every track had shipped products, deadlines, and engineers who had already solved these problems their own way. A system imposed from outside gets ignored politely and routed around quietly.</p>
+          <p class="case__p">So the real problem was never components. It was <b>adoption</b>. The design work had to be so obviously better — and so obviously easier — that using it beat not using it. That reframing drove every decision below.</p>
+        </section>
+
+        <!-- 4. APPROACH -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The approach — a loop, not a line</h2>
+          <p class="case__p">Gather requirements → Analysis → Brainstorm → Research → Ruleset &amp; Documentation → Accessibility → Ideate → Usability testing → Functional testing → Deliver / Release → Feedback.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-flow" aria-hidden="true">
+            <span class="flow__n">Gather requirements</span><em>→</em>
+            <span class="flow__n">Analysis</span><em>→</em>
+            <span class="flow__n">Brainstorm</span><em>→</em>
+            <span class="flow__n">Research</span><em>→</em>
+            <span class="flow__n">Ruleset &amp; Docs</span><em>→</em>
+            <span class="flow__n">Accessibility</span><em>→</em>
+            <span class="flow__n">Ideate</span><em>→</em>
+            <span class="flow__n">Usability testing</span><em>→</em>
+            <span class="flow__n">Functional testing</span><em>→</em>
+            <span class="flow__n flow__n--rel">Deliver / Release</span>
+            <span class="flow__loop">↺ Feedback loops back to the top</span>
+          </div>
+          <figcaption>Approach flow — release isn't the end of the arrow. It feeds the next one.</figcaption>
+        </figure>
+
+        <section class="case__section" data-reveal>
+          <p class="case__p">Note the shape: feedback returns to the top. A design system that ships once is a style guide. One that ships continuously is a product.</p>
+        </section>
+
+        <!-- 5. ATOM UP -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Building from the atom up</h2>
+          <p class="case__p">Atoms → molecules. A circle, a square, a text block — composed into a message component.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-atom" aria-hidden="true">
+            <div class="atom__prims"><i class="atom__c"></i><i class="atom__s"></i><i class="atom__t"></i></div>
+            <em class="ba__arrow">→</em>
+            <div class="atom__mol"><span class="atom__mc"></span><span class="atom__mt">Hello There!</span></div>
+          </div>
+          <figcaption>Atom → molecules. You can't ship a technology-agnostic page — you can ship a technology-agnostic primitive, and let each track compose upward.</figcaption>
+        </figure>
+
+        <!-- 6. ANATOMY OF ONE COMPONENT -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Anatomy of one component</h2>
+          <p class="case__p">I'll show one, because one is enough to prove the rest. The dropdown.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-doc" aria-hidden="true">
+            <aside class="doc__nav">
+              <span class="doc__navcur">Overview</span>
+              <span>Usage</span><span>Anatomy</span><span>Specification</span>
+              <span>Variants</span><span>Accessibility</span><span>References</span>
+            </aside>
+            <div class="doc__main">
+              <div class="doc__live">
+                <span class="doc__lbl">Account type</span>
+                <div class="doc__dd"><span>Select an option</span><i class="doc__chev"></i></div>
+              </div>
+              <pre class="doc__code"><code><span class="t">&lt;label</span> <span class="a">for</span>=<span class="s">"acct"</span><span class="t">&gt;</span>Account type<span class="t">&lt;/label&gt;</span>
+<span class="t">&lt;select</span> <span class="a">id</span>=<span class="s">"acct"</span><span class="t">&gt;…&lt;/select&gt;</span></code></pre>
+            </div>
+          </div>
+          <figcaption>Dropdown documentation — seven sections, every component, every state: Overview, Usage, Anatomy, Specification, Variants, Accessibility, References.</figcaption>
+        </figure>
+
+        <!-- 7. SPECIFICATION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Specification — a contract, not a suggestion</h2>
+          <p class="case__p"><b>Overview:</b> what it is, when it activates, how selection works. <b>Anatomy:</b> label, then options — single/multi select, and the active dropdown icon. <b>Specification:</b> collapsed and expanded states, measured. 8px, 36px, 24px, 30px. Grid widths min 04, max 06.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-spec" aria-hidden="true">
+            <div class="spec__item">
+              <div class="doc__dd"><span>Collapsed</span><i class="doc__chev"></i></div>
+              <span class="spec__tick spec__tick--h">36px</span>
+              <span class="spec__tick spec__tick--pad">8px</span>
+            </div>
+            <div class="spec__item">
+              <div class="doc__dd doc__dd--open"><span>Expanded</span><i class="doc__chev"></i>
+                <div class="doc__opts"><i></i><i></i><i></i></div>
+              </div>
+              <span class="spec__tick spec__tick--row">30px</span>
+            </div>
+          </div>
+          <figcaption>Specification redlines — not a suggestion. A contract with engineering.</figcaption>
+        </figure>
+
+        <!-- 8. USAGE -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Usage — the part most systems skip</h2>
+          <p class="case__p">Telling designers where a component fits is easy. Telling them where <em>not</em> to use it is what makes a system trustworthy.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-usage" aria-hidden="true">
+            <div class="usage usage--do">
+              <span class="usage__h"><b class="usage__mark">✓</b> Recommended</span>
+              <ul><li>Commands, navigation, form filling, attribute defining</li><li>When static space shows chips that change the selection while scrolling</li></ul>
+            </div>
+            <div class="usage usage--dont">
+              <span class="usage__h"><b class="usage__mark usage__mark--no">✕</b> Avoid</span>
+              <ul><li>When values are 3 or fewer and only one option is needed</li><li>When options are self-descriptive and not overly lengthy</li></ul>
+            </div>
+          </div>
+          <figcaption>Usage do / don't — a system that only says yes gets used wrongly. Constraints are what make it safe to hand to someone you'll never meet.</figcaption>
+        </figure>
+
+        <!-- 9. ACCESSIBILITY (HERO) -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Accessibility, designed in</h2>
+          <p class="case__p">Not a compliance pass at the end — a state in the component spec. Every dropdown state documented, keyboard-first, with the colour contract to match: focus outline, error, disabled fill, read-only. An engineer implementing this <em>cannot accidentally build an inaccessible dropdown</em> — the accessible version is the only version documented. Level AA of WCAG 2.1, across the system.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-states" aria-hidden="true">
+            <div class="st"><span class="st__name">Default</span><div class="doc__dd"><span>Option</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Hover</span><div class="doc__dd doc__dd--hover"><span>Option</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Keyboard focus</span><div class="doc__dd doc__dd--focus"><span>Option</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Focus (list)</span><div class="doc__dd doc__dd--focus doc__dd--open"><span>Option</span><i class="doc__chev"></i><div class="doc__opts"><i class="on"></i><i></i></div></div></div>
+            <div class="st"><span class="st__name">Selected</span><div class="doc__dd doc__dd--sel"><span>Savings</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Filled</span><div class="doc__dd"><span class="fill">Current A/C</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Error</span><div class="doc__dd doc__dd--err"><span>Required</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Read-only</span><div class="doc__dd doc__dd--ro"><span>Savings</span><i class="doc__chev"></i></div></div>
+            <div class="st"><span class="st__name">Disabled</span><div class="doc__dd doc__dd--dis"><span>Option</span><i class="doc__chev"></i></div></div>
+          </div>
+          <figcaption>Accessibility states — ten variants, keyboard-first, not mouse-first. The path of least resistance is the compliant one. That's the trick to accessibility at scale.</figcaption>
+        </figure>
+
+        <!-- 10. USABILITY TESTING (HERO) -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Proving decisions with users</h2>
+          <p class="case__p">We didn't argue about approaches. We tested them. Two table-filter approaches — combined vs individual filters. 7 participants, novice through expert. The hypothesis: fewer clicks per user, but is a single-filter scenario better with fewer columns?</p>
+        </section>
+
+        <div class="case__table case__table--4" data-reveal>
+          <div class="ct__row ct__row--head"><span>Approach</span><span>Average time</span><span>Completion</span><span>Votes</span></div>
+          <div class="ct__row"><span>Approach 1 — combined</span><span>4.21 min</span><span>100%</span><span>1</span></div>
+          <div class="ct__row ct__row--win"><span>Approach 2 — individual</span><span>3.85 min</span><span>100%</span><span>6</span></div>
+        </div>
+
+        <section class="case__section" data-reveal>
+          <p class="case__p">Both completed at 100% — so completion couldn't decide it. Time and preference could, and they agreed: Approach 2, by 0.36 minutes and 6 votes to 1. Run over Microsoft Teams, measuring timing and functionality while probing workflow comprehension.</p>
+          <p class="case__p">Why I'm showing you this: it's the closest thing in my portfolio to a real product decision made on real evidence, with a real trade-off, verified with real users. <em>Not a preference. A finding.</em></p>
+        </section>
+
+        <!-- 11. RESEARCH / JOURNEY -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Research grounded in the actual job</h2>
+          <p class="case__p">Before components, the use case: a bank teller trying to find out whether the person in front of them is already a customer. They need fast, accurate search; a clear interface; comprehensive profiles in one place; and an efficient new-account path. Their pain: slow, cumbersome search, inaccurate results, an unintuitive CRM, and no complete picture of the customer.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-emotion" aria-hidden="true">
+            <svg viewBox="0 0 600 180" preserveAspectRatio="none" width="100%" height="180">
+              <polyline points="30,70 160,50 300,120 440,95 570,45" fill="none" stroke="var(--action)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="30" cy="70" r="5" fill="var(--action)"/><circle cx="160" cy="50" r="5" fill="var(--action)"/><circle cx="300" cy="120" r="5" fill="var(--action)"/><circle cx="440" cy="95" r="5" fill="var(--action)"/><circle cx="570" cy="45" r="5" fill="var(--action)"/>
+            </svg>
+            <div class="emotion__labels"><span>Locate</span><span>Search</span><span>Wait</span><span>Verify</span><span>Resolve</span></div>
+          </div>
+          <figcaption>Customer journey map — where the experience actually dips. The business question, in one line: how do we locate an existing customer, or streamline the search to determine their status?</figcaption>
+        </figure>
+
+        <!-- 12. PATTERN APPLIED -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The pattern, applied</h2>
+          <p class="case__p">Enquiry → results → refined search. Built from the system's own atoms.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-enq" aria-hidden="true">
+            <div class="enq">
+              <span class="enq__lbl">Enquiry</span>
+              <div class="enq__form"><span class="doc__lbl">Customer ID / phone</span><div class="doc__dd"><span>Search by…</span><i class="doc__chev"></i></div><span class="enq__btn">Find</span></div>
+            </div>
+            <em class="ba__arrow">→</em>
+            <div class="enq">
+              <span class="enq__lbl enq__lbl--new">Search result</span>
+              <div class="enq__res"><span class="enq__row on"></span><span class="enq__row"></span><span class="enq__row"></span><span class="enq__row"></span></div>
+            </div>
+          </div>
+          <figcaption>Enquiry pattern → search result. A design system that can't build its own product's hardest screen isn't a system — it's a swatch book. This was the proof.</figcaption>
+        </figure>
+
+        <!-- 13. HOW I LED IT -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">How I led it</h2>
+          <ul class="case__list">
+            <li><b>Strategy &amp; execution.</b> Built the strategy, ran workshops, analysed research, usability testing, mid- and high-fidelity wireframes; walkthroughs to client and execution teams.</li>
+            <li><b>Delivered components, not decks.</b> Production-ready assets and code to engineering and framework teams — cross-platform consistency guaranteed.</li>
+            <li><b>Design reviews.</b> Facilitated feedback, synthesised insights, folded improvements back into the system.</li>
+            <li><b>Mentored design &amp; dev teams.</b> Deep understanding of the system so it got used correctly, not just used.</li>
+            <li><b>Maintenance strategy.</b> A plan for ongoing upkeep with regular updates — because a system without a maintenance plan has an expiry date.</li>
+            <li><b>Culture.</b> Weekly team activities, monthly appreciation for star performers.</li>
+          </ul>
+        </section>
+
+        <!-- 14. OUTCOMES -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Outcomes</h2>
+          <div class="case__outcomes">
+            <div><b>+70%</b><span>Design-consistency efficiency</span></div>
+            <div><b>All tracks</b><span>Unified under one technology-agnostic language</span></div>
+            <div><b>WCAG 2.1 AA</b><span>Across every documented component state</span></div>
+            <div><b>6 → 1 vote</b><span>7-user A/B test — 3.85 vs 4.21 min</span></div>
+          </div>
+          <h2 class="case__h" style="margin-top:2.4em">What changed</h2>
+          <p class="case__p">Four design languages became one. Accessibility stopped being a review gate and became the default path. Engineering received code, not interpretation. And the system was built to keep evolving — testing and refinement led continuously, so it adapts as user needs and technology move.</p>
+        </section>
+
+        <!-- 15. REFLECTION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">What I'd do differently</h2>
+          <p class="case__p">I measured the system's health, not the product's. +70% consistency is real — but it's an internal metric. It tells you the system worked, not that customers had a better time at the bank.</p>
+          <p class="case__p">I never instrumented the thing that mattered: did teller search get faster in production? Did account-setup time drop? Did the tracks that adopted earliest ship better outcomes? That data existed. I didn't ask for it.</p>
+          <p class="case__p">I'd also track adoption as a funnel — which tracks adopted, how fast, where they resisted, what they forked and why. <em>Every fork is a bug report about the system</em>, and I was treating them as compliance failures rather than signal. The system was rigorous. The measurement of the system wasn't. That's the discipline I'm carrying into a product role — and exactly why I want one.</p>
+        </section>
+
+        <footer class="case__foot" data-reveal>
+          <a class="btn btn--solid" href="index.html#work" data-magnetic>← Back to work</a>
+          <a class="btn btn--ghost" href="mailto:rathiadhikary@gmail.com?subject=I%20would%20like%20to%20know%20more%20about%20Finacle" data-magnetic>Discuss this project</a>
+        </footer>
+      </article>
+
+      <!-- Prev / Next project -->
+      <nav class="case-nav" data-reveal aria-label="More projects">
+        <a class="case-nav__item case-nav__item--prev" href="assistedge.html">
+          <span class="case-nav__label"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Previous project</span>
+          <span class="case-nav__title">AssistEdge</span>
+          <span class="case-nav__cat">B — Healthcare · Service</span>
+        </a>
+        <a class="case-nav__item case-nav__item--next" href="just16.html">
+          <span class="case-nav__label">Next project <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="case-nav__title">JUST16</span>
+          <span class="case-nav__cat">D — Employee experience · Engagement</span>
+        </a>
+      </nav>
+
+      <footer class="foot" style="max-width:880px;margin:0 auto;padding-inline:clamp(20px,5vw,40px)">
+        <span>© <span id="year">2026</span> Rathijit Adhikary</span>
+        <span>Kolkata / Bangalore, India</span>
+        <a href="index.html#top">Home ↑</a>
+      </footer>
+    </main>
+  </body>
+</html>

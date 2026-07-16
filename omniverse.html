@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Omniverse — turning fragmented marketing data into decisions. A unified, funnel-first Power BI analytics experience for Haleon by Rathijit Adhikary." />
+    <meta name="author" content="Rathijit Adhikary" />
+    <meta property="og:title" content="Omniverse — Case Study · Rathijit Adhikary" />
+    <meta property="og:description" content="Turning fragmented marketing data into decisions — a funnel-first analytics experience for Haleon." />
+    <meta property="og:type" content="article" />
+    <title>Omniverse — Case Study · Rathijit Adhikary</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23000000'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='52' font-weight='700' fill='%23ffffff' text-anchor='middle'%3ERA%3C/text%3E%3C/svg%3E" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
+    <script defer src="./main.js"></script>
+
+    <script>
+      document.documentElement.classList.remove('no-js');
+      document.documentElement.classList.add('js');
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.scrollTo(0, 0);
+    </script>
+  </head>
+  <body>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- NAV -->
+    <header class="nav is-scrolled" id="nav">
+      <a href="index.html" class="nav__brand" data-magnetic>
+        <span class="nav__mark">RA</span>
+        <span class="nav__name">Rathijit Adhikary</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#about">About</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#voices">Voices</a>
+      </nav>
+      <a href="index.html#contact" class="nav__cta" data-magnetic>Let's talk</a>
+    </header>
+
+    <main class="casepage" id="top">
+      <article class="case__wrap">
+        <a href="index.html#work" class="case__back" data-reveal data-magnetic>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Back to selected work</span>
+        </a>
+
+        <!-- HERO -->
+        <header class="case__hero" data-stagger>
+          <span class="case__eyebrow">Case study · Financial · Data strategy</span>
+          <h1 class="case__title">Omniverse</h1>
+          <p class="case__sub">Haleon · Solo Design Partner · Power&nbsp;BI + Topaz Fabric</p>
+          <p class="case__lead">Turning fragmented marketing data into decisions.</p>
+          <dl class="case__meta">
+            <div><dt>Role</dt><dd>Solo Design Partner — end-to-end UX</dd></div>
+            <div><dt>Client</dt><dd>Haleon · MEA marketing</dd></div>
+            <div><dt>Stack</dt><dd>Power BI · Topaz Fabric Studio</dd></div>
+            <div><dt>Focus</dt><dd>Research · IA · Data viz · AI prototyping</dd></div>
+          </dl>
+        </header>
+
+        <!-- 1. THE QUESTION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The question nobody could answer</h2>
+          <p class="case__p">Haleon's MEA marketing teams ran omnichannel campaigns to healthcare professionals — reps, email, webinars, WhatsApp, events. Millions in spend. Dozens of touchpoints. And one question they couldn't answer:</p>
+          <blockquote class="case__quote">Is our channel strategy actually working?</blockquote>
+          <p class="case__p">They had dashboards. They had data. They didn't have an answer.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-sheet" aria-hidden="true">
+            <div class="viz-sheet__head"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="viz-sheet__grid"></div>
+            <i class="viz-sheet__hot" style="--x:2;--y:1"></i>
+            <i class="viz-sheet__hot" style="--x:5;--y:3"></i>
+            <i class="viz-sheet__hot" style="--x:7;--y:4"></i>
+            <i class="viz-sheet__hot viz-sheet__hot--warn" style="--x:4;--y:5"></i>
+          </div>
+          <figcaption class="case__cap--full">“Before” — the existing Executive Summary: three reports stitched by hand, already stale.</figcaption>
+        </figure>
+
+        <!-- 2. WHY BROKEN -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Why it was broken</h2>
+          <ul class="case__list">
+            <li><b>Data was fragmented.</b> Analysts hand-stitched the old dashboard, Google Analytics, IPSOS and search reports — days of work, obsolete on arrival.</li>
+            <li><b>KPIs sat in silos.</b> You could see email opens. You could see webinar attendance. You couldn't see whether one caused the other.</li>
+            <li><b>Activity never reached outcomes.</b> So every budget conversation ran on instinct, not evidence.</li>
+            <li><b>There was no project brief.</b> I wrote one — scope, phases, KPIs as Jira tickets, milestones — before designing anything.</li>
+          </ul>
+        </section>
+
+        <!-- 3. MENTAL MODEL -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Finding the real mental model</h2>
+          <p class="case__p">I didn't ask stakeholders what they wanted on a dashboard. That produces feature lists. I asked them to think out loud instead:</p>
+          <blockquote class="case__quote case__quote--sm">Imagine campaign ROI dropped last month. Walk me through how you'd figure out why.</blockquote>
+          <p class="case__p">Every action and KPI they named went on a sticky note, left to right, across the whiteboard. People are bad at describing what they need — and excellent at describing how they think. That decision flow became the information architecture.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-board" aria-hidden="true">
+            <span class="note">Check spend</span><em>→</em>
+            <span class="note">Channel mix</span><em>→</em>
+            <span class="note">Where's the drop?</span><em>→</em>
+            <span class="note">HCP reach</span><em>→</em>
+            <span class="note note--act">Reallocate budget</span>
+          </div>
+          <figcaption>Workshop board — their decision path, mapped in their words.</figcaption>
+        </figure>
+
+        <!-- 4. PERSONAS -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Two people, two altitudes</h2>
+          <p class="case__p">Interviews surfaced two personas — and the gap between them shaped the whole product. Leadership needed to know <em>whether</em> it worked. The Omnichannel Activation Lead needed to know <em>why</em>, and <em>what to do next</em>.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-personas" aria-hidden="true">
+            <div class="persona">
+              <span class="persona__tag">Leadership Team</span>
+              <p class="persona__goal">Goal — know whether the channel strategy is working.</p>
+              <blockquote>“There is ambiguity in attributing outcomes to the effectiveness of channel mixes.”</blockquote>
+            </div>
+            <div class="persona">
+              <span class="persona__tag">Omnichannel Activation Lead</span>
+              <p class="persona__goal">Goal — know why, and what to do next.</p>
+              <blockquote>“I want in-depth analysis and recommendations — what's working and what's not.”</blockquote>
+            </div>
+          </div>
+          <figcaption>Two personas, one data set. The insight: they wanted different <em>altitudes</em> on the same data — which is why this became three views, not one dashboard with more filters.</figcaption>
+        </figure>
+
+        <!-- 5. HYPOTHESIS -->
+        <section class="case__section" data-reveal>
+          <div class="case__hypo">
+            <span class="case__hypo-label">The hypothesis</span>
+            <p>If stakeholders see the HCP journey as a <b>sequence</b> rather than scattered metrics, they can find where engagement leaks — and act.</p>
+          </div>
+          <p class="case__p">Everything after this was an attempt to prove or break that.</p>
+        </section>
+
+        <!-- 6. SOLUTION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">The solution — a funnel, first</h2>
+          <p class="case__p">Awareness → Consideration → Intent → Conversion → Retention. Each stage carrying its own objectives, metrics and decision levers. Why a funnel? It gave both personas a shared language. Before, they described the same problem in different vocabularies. Now they could argue about <em>where</em> the drop-off was — not <em>whether</em> there was one.</p>
+        </section>
+
+        <figure class="case__fig" data-reveal>
+          <div class="viz viz-funnel" aria-hidden="true">
+            <span class="funnel__stage" style="--w:100%">Awareness</span>
+            <span class="funnel__stage" style="--w:84%">Consideration</span>
+            <span class="funnel__stage" style="--w:66%">Intent</span>
+            <span class="funnel__stage" style="--w:48%">Conversion</span>
+            <span class="funnel__stage" style="--w:34%">Retention</span>
+          </div>
+          <figcaption>The omnichannel funnel — five stages, one shared language.</figcaption>
+        </figure>
+
+        <div class="case__table" data-reveal>
+          <div class="ct__row ct__row--head"><span>View</span><span>Answers</span><span>For</span></div>
+          <div class="ct__row"><span>Executive Summary</span><span>Is it working?</span><span>Leadership</span></div>
+          <div class="ct__row"><span>Channel Performance</span><span>Why is it working?</span><span>Activation Lead</span></div>
+          <div class="ct__row"><span>Suggestion Dashboard</span><span>What should we do?</span><span>Both</span></div>
+        </div>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-journey" aria-hidden="true">
+            <div class="jstep"><span class="jstep__name">Rep Reach</span><div class="jbar"><i class="jbar__go" style="--v:100%"></i></div><span class="jstep__n">4,200 reached</span></div>
+            <div class="jstep"><span class="jstep__name">Email</span><div class="jbar"><i class="jbar__go" style="--v:62%"></i><i class="jbar__drop" style="--v:38%"></i></div><span class="jstep__n">2,600 continued · 1,600 dropped</span></div>
+            <div class="jstep"><span class="jstep__name">Webinar</span><div class="jbar"><i class="jbar__go" style="--v:34%"></i><i class="jbar__drop" style="--v:66%"></i></div><span class="jstep__n">1,430 continued · 1,170 dropped</span></div>
+          </div>
+          <figcaption>Channel Performance — the sequence view. Rep&nbsp;Reach → Email → Webinar with continued vs. dropped at each step. This is the money shot: it makes the drop-off visible instantly.</figcaption>
+        </figure>
+
+        <section class="case__section" data-reveal>
+          <p class="case__p">The third view is the one that mattered. The first two make people better analysts. The third makes them faster deciders — surfacing recommendations instead of reporting history. That's not a feature. It's a change in how the team operates: <em>hindsight → continuous optimisation.</em></p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-suggest" aria-hidden="true">
+            <div class="viz-suggest__bar"><span></span><span></span><span></span><b>Suggestion Dashboard</b></div>
+            <div class="viz-suggest__body">
+              <div class="viz-suggest__chart">
+                <div class="vs-bars"><i style="--h:52%"></i><i style="--h:74%"></i><i style="--h:40%"></i><i style="--h:88%"></i><i style="--h:61%"></i><i style="--h:70%"></i><i style="--h:46%"></i></div>
+                <div class="vs-cap">Channel effectiveness · last 90 days</div>
+              </div>
+              <div class="viz-suggest__recs">
+                <div class="rec"><span class="rec__tag">Recommended</span><b>Shift 12% budget from email → webinars in UAE.</b><em>Projected +8% HCP conversion</em></div>
+                <div class="rec"><span class="rec__tag rec__tag--alt">Watch</span><b>Rep reach plateauing in KSA.</b><em>Consider WhatsApp follow-up</em></div>
+                <div class="rec"><span class="rec__tag rec__tag--alt">Opportunity</span><b>Whitespace in event → intent handoff.</b><em>Add nurture sequence</em></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>The Suggestion Dashboard — AI-driven recommendations that move the team from reporting history to deciding what's next. The differentiator, given room as a hero.</figcaption>
+        </figure>
+
+        <!-- 7. PROTOTYPING -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Prototyping before building</h2>
+          <p class="case__p">Power BI development is slow and expensive to change. Every wrong assumption we shipped into dev cost weeks. So I prototyped the interactions in <b>Topaz Fabric Studio</b> with AI-assisted vibe coding — letting stakeholders use the thing before it was built, and validating complex data views before Power BI development started.</p>
+        </section>
+
+        <figure class="case__fig case__fig--full" data-reveal>
+          <div class="viz viz-ba" aria-hidden="true">
+            <div class="ba ba--old">
+              <span class="ba__lbl">Before</span>
+              <div class="ba-sheet"></div>
+            </div>
+            <em class="ba__arrow">→</em>
+            <div class="ba ba--new">
+              <span class="ba__lbl ba__lbl--new">After</span>
+              <div class="ba-dash"><span class="ba-dash__kpi"></span><span class="ba-dash__kpi"></span><div class="ba-dash__chart"><i style="--h:50%"></i><i style="--h:80%"></i><i style="--h:62%"></i><i style="--h:90%"></i></div></div>
+            </div>
+          </div>
+          <figcaption>Before → After. Old spreadsheet grid to a live, funnel-first dashboard — the whole project in one frame.</figcaption>
+        </figure>
+
+        <!-- 8. CONSTRAINT -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Working inside the constraint</h2>
+          <p class="case__p">Power BI isn't a blank canvas. Several patterns I wanted weren't natively supported. Rather than design something beautiful and unbuildable, I brought developers into the design conversation early — feasibility checks, KPI accuracy validation, end-to-end testing. Then we A/B tested with stakeholders during UAT. Not <em>do you like it</em> — <em>can you find the answer?</em></p>
+        </section>
+
+        <!-- 9. OUTCOMES -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">Outcomes</h2>
+          <div class="case__outcomes">
+            <div><b>MEA-wide</b><span>Adopted across leadership and activation teams</span></div>
+            <div><b>3 → 1</b><span>Fragmented reports replaced by one unified view</span></div>
+            <div><b>WCAG 2.1 AA</b><span>Met across every shipped view</span></div>
+            <div><b>A/B tested</b><span>KPI accuracy validated through structured testing</span></div>
+          </div>
+          <h2 class="case__h" style="margin-top:2.4em">What changed for Haleon</h2>
+          <p class="case__p">A funnel-first strategy gave marketing a shared language for performance. One dashboard replaced 3+ manual reporting sources. Leadership gained go/no-go capability without ad-hoc data pulls. And the Suggestion Dashboard moved them from hindsight to continuous optimisation.</p>
+        </section>
+
+        <!-- 10. REFLECTION -->
+        <section class="case__section" data-reveal>
+          <h2 class="case__h">What I'd do differently</h2>
+          <p class="case__p">I shipped this without instrumenting it. I have adoption. I have UAT validation. I don't have a 90-day read on whether decision speed actually improved, or whether a single budget moved because of the Suggestion view.</p>
+          <p class="case__p">I'd negotiate the success metric at kickoff now, and hold both sides to it. The design was rigorous. The proof wasn't designed with the same rigour. That's the discipline I'm bringing forward.</p>
+        </section>
+
+        <footer class="case__foot" data-reveal>
+          <a class="btn btn--solid" href="index.html#work" data-magnetic>← Back to work</a>
+          <a class="btn btn--ghost" href="mailto:rathiadhikary@gmail.com?subject=I%20would%20like%20to%20know%20more%20about%20Omniverse" data-magnetic>Discuss this project</a>
+        </footer>
+      </article>
+
+      <!-- Prev / Next project -->
+      <nav class="case-nav" data-reveal aria-label="More projects">
+        <a class="case-nav__item case-nav__item--prev" href="just16.html">
+          <span class="case-nav__label"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> Previous project</span>
+          <span class="case-nav__title">JUST16</span>
+          <span class="case-nav__cat">D — Employee experience · Engagement</span>
+        </a>
+        <a class="case-nav__item case-nav__item--next" href="assistedge.html">
+          <span class="case-nav__label">Next project <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="case-nav__title">AssistEdge</span>
+          <span class="case-nav__cat">B — Healthcare · Service</span>
+        </a>
+      </nav>
+
+      <footer class="foot" style="max-width:880px;margin:0 auto;padding-inline:clamp(20px,5vw,40px)">
+        <span>© <span id="year">2026</span> Rathijit Adhikary</span>
+        <span>Kolkata / Bangalore, India</span>
+        <a href="index.html#top">Home ↑</a>
+      </footer>
+    </main>
+  </body>
+</html>

@@ -14,7 +14,8 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
-    document.getElementById("year").textContent = new Date().getFullYear();
+    const yearEl = document.getElementById("year");
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // Force the page to open at the hero on every load / reload
     if ("scrollRestoration" in history) history.scrollRestoration = "manual";
@@ -35,6 +36,7 @@
     initFloaters();
     initMarquee();
     initMagnetic();
+    initCarousel();
     initLoader(lenis);
 
     // Keep ScrollTrigger honest after images/fonts settle
@@ -152,6 +154,59 @@
 
     heroTl.to(words, { yPercent: 0, duration: 1.1, stagger: 0.08 })
       .to(lines, { yPercent: 0, opacity: 1, duration: 0.9, stagger: 0.12 }, "-=0.8");
+  }
+
+  /* ---------- Photo carousel (auto-play, cross-fade) ---------- */
+  function initCarousel() {
+    document.querySelectorAll("[data-carousel]").forEach((root) => {
+      const slides = Array.from(root.querySelectorAll(".carousel__slide"));
+      if (slides.length < 2) return;
+      const dotsWrap = root.querySelector(".carousel__dots");
+      const bar = root.querySelector(".carousel__bar i");
+      const INTERVAL = 3800;
+      let i = 0, timer = null, paused = false;
+
+      // build dots
+      const dots = slides.map((_, idx) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.setAttribute("aria-label", "Show photo " + (idx + 1));
+        if (idx === 0) b.classList.add("is-active");
+        b.addEventListener("click", () => { go(idx); restart(); });
+        dotsWrap && dotsWrap.appendChild(b);
+        return b;
+      });
+
+      function go(n) {
+        const prev = i;
+        i = (n + slides.length) % slides.length;
+        if (i === prev) return;
+        slides[prev].classList.remove("is-active");
+        slides[prev].classList.add("is-prev");
+        slides[i].classList.remove("is-prev");
+        slides[i].classList.add("is-active");
+        dots[prev] && dots[prev].classList.remove("is-active");
+        dots[i] && dots[i].classList.add("is-active");
+      }
+
+      function armBar() {
+        if (!bar) return;
+        bar.classList.remove("run");
+        bar.style.setProperty("--dur", INTERVAL + "ms");
+        void bar.offsetWidth; // reflow to restart animation
+        if (!paused) bar.classList.add("run");
+      }
+      function tick() { go(i + 1); armBar(); }
+      function start() { if (REDUCED) return; stop(); armBar(); timer = setInterval(tick, INTERVAL); }
+      function stop() { clearInterval(timer); timer = null; }
+      function restart() { start(); }
+
+      root.addEventListener("mouseenter", () => { paused = true; stop(); if (bar) bar.classList.remove("run"); });
+      root.addEventListener("mouseleave", () => { paused = false; start(); });
+      document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); else if (!paused) start(); });
+
+      start();
+    });
   }
 
   /* ---------- Preloader: count up, then lift to reveal ---------- */
