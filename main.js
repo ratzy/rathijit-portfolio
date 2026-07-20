@@ -271,6 +271,17 @@
   function initReveals() {
     if (!hasGSAP || !hasST || REDUCED) return;
 
+    // Reveal helper: fire on scroll-enter, but also immediately for anything
+    // already in view at load (e.g. inner-page heroes above the fold), so the
+    // opacity:0 hidden state can never get stuck. Guarded to run only once.
+    const vh = () => window.innerHeight || document.documentElement.clientHeight;
+    function armReveal(trigger, start, action, ratio) {
+      let done = false;
+      const run = () => { if (done) return; done = true; action(); };
+      ScrollTrigger.create({ trigger, start, once: true, onEnter: run });
+      if (trigger.getBoundingClientRect().top < vh() * (ratio || 0.95)) run();
+    }
+
     // Split [data-reveal-lines] into masked lines
     document.querySelectorAll("[data-reveal-lines]").forEach((el) => {
       const html = el.innerHTML;
@@ -279,39 +290,27 @@
       const inner = el.querySelector(".rl-inner");
       gsap.set(inner, { yPercent: 110 });
       gsap.set(el.querySelector(".rl-line"), { opacity: 1 });
-      ScrollTrigger.create({
-        trigger: el, start: "top 85%",
-        onEnter: () => gsap.to(inner, { yPercent: 0, duration: 1.1, ease: "power4.out" }),
-      });
+      armReveal(el, "top 85%", () => gsap.to(inner, { yPercent: 0, duration: 1.1, ease: "power4.out" }), 0.85);
     });
 
     // Simple fade-up
     document.querySelectorAll("[data-reveal]").forEach((el) => {
       gsap.set(el, { y: 40, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: el, start: "top 88%",
-        onEnter: () => gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }),
-      });
+      armReveal(el, "top 88%", () => gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }), 0.9);
     });
 
     // Staggered groups
     document.querySelectorAll("[data-stagger]").forEach((group) => {
       const items = group.children;
       gsap.set(items, { y: 48, opacity: 0 });
-      ScrollTrigger.create({
-        trigger: group, start: "top 82%",
-        onEnter: () => gsap.to(items, { y: 0, opacity: 1, duration: 0.9, stagger: 0.09, ease: "power3.out" }),
-      });
+      armReveal(group, "top 82%", () => gsap.to(items, { y: 0, opacity: 1, duration: 0.9, stagger: 0.09, ease: "power3.out" }), 0.9);
     });
 
     // Opacity-only reveal (keeps CSS transforms like floating intact)
     document.querySelectorAll("[data-fade]").forEach((group) => {
       const items = group.children;
       gsap.set(items, { opacity: 0 });
-      ScrollTrigger.create({
-        trigger: group, start: "top 82%",
-        onEnter: () => gsap.to(items, { opacity: 1, duration: 1, stagger: 0.12, ease: "power2.out" }),
-      });
+      armReveal(group, "top 82%", () => gsap.to(items, { opacity: 1, duration: 1, stagger: 0.12, ease: "power2.out" }), 0.9);
     });
 
     // Project frames parallax
