@@ -269,63 +269,44 @@
 
   /* ---------- Scroll reveals ---------- */
   function initReveals() {
-    if (!hasGSAP || !hasST || REDUCED) return;
+    if (REDUCED) return; // reduced-motion CSS shows everything
 
-    // Reveal helper: fire on scroll-enter, but also immediately for anything
-    // already in view at load (e.g. inner-page heroes above the fold), so the
-    // opacity:0 hidden state can never get stuck. Guarded to run only once.
-    const vh = () => window.innerHeight || document.documentElement.clientHeight;
-    function armReveal(trigger, start, action, ratio) {
-      let done = false;
-      const run = () => { if (done) return; done = true; action(); };
-      ScrollTrigger.create({ trigger, start, once: true, onEnter: run });
-      if (trigger.getBoundingClientRect().top < vh() * (ratio || 0.95)) run();
+    // Wrap [data-reveal-lines] content in a masked line (CSS animates .rl-inner)
+    document.querySelectorAll("[data-reveal-lines]").forEach((el) => {
+      if (el.querySelector(".rl-line")) return;
+      el.innerHTML = `<span class="rl-line"><span class="rl-inner">${el.innerHTML}</span></span>`;
+    });
+
+    // Reveal by toggling .is-in via IntersectionObserver — pure CSS transitions,
+    // so it never depends on gsap's ticker. IO reliably fires an initial callback
+    // for elements already in view at load (e.g. inner-page heroes above the fold).
+    const targets = document.querySelectorAll("[data-reveal],[data-reveal-lines],[data-stagger],[data-fade]");
+    if (typeof IntersectionObserver === "undefined") {
+      targets.forEach((el) => el.classList.add("is-in"));
+    } else {
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach((e) => {
+          if (!e.isIntersecting) return;
+          e.target.classList.add("is-in");
+          obs.unobserve(e.target);
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.04 });
+      targets.forEach((el) => io.observe(el));
     }
 
-    // Split [data-reveal-lines] into masked lines
-    document.querySelectorAll("[data-reveal-lines]").forEach((el) => {
-      const html = el.innerHTML;
-      // wrap in a single animated line (keeps <br>, <em> intact)
-      el.innerHTML = `<span class="rl-line"><span class="rl-inner">${html}</span></span>`;
-      const inner = el.querySelector(".rl-inner");
-      gsap.set(inner, { yPercent: 110 });
-      gsap.set(el.querySelector(".rl-line"), { opacity: 1 });
-      armReveal(el, "top 85%", () => gsap.to(inner, { yPercent: 0, duration: 1.1, ease: "power4.out" }), 0.85);
-    });
-
-    // Simple fade-up
-    document.querySelectorAll("[data-reveal]").forEach((el) => {
-      gsap.set(el, { y: 40, opacity: 0 });
-      armReveal(el, "top 88%", () => gsap.to(el, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }), 0.9);
-    });
-
-    // Staggered groups
-    document.querySelectorAll("[data-stagger]").forEach((group) => {
-      const items = group.children;
-      gsap.set(items, { y: 48, opacity: 0 });
-      armReveal(group, "top 82%", () => gsap.to(items, { y: 0, opacity: 1, duration: 0.9, stagger: 0.09, ease: "power3.out" }), 0.9);
-    });
-
-    // Opacity-only reveal (keeps CSS transforms like floating intact)
-    document.querySelectorAll("[data-fade]").forEach((group) => {
-      const items = group.children;
-      gsap.set(items, { opacity: 0 });
-      armReveal(group, "top 82%", () => gsap.to(items, { opacity: 1, duration: 1, stagger: 0.12, ease: "power2.out" }), 0.9);
-    });
-
-    // Project frames parallax
-    document.querySelectorAll(".project__media").forEach((m) => {
-      gsap.fromTo(m, { y: 60 }, {
-        y: -60, ease: "none",
-        scrollTrigger: { trigger: m, start: "top bottom", end: "bottom top", scrub: true },
+    // Parallax + batched mock animation keep using ScrollTrigger (scrub effects)
+    if (hasGSAP && hasST) {
+      document.querySelectorAll(".project__media").forEach((m) => {
+        gsap.fromTo(m, { y: 60 }, {
+          y: -60, ease: "none",
+          scrollTrigger: { trigger: m, start: "top bottom", end: "bottom top", scrub: true },
+        });
       });
-    });
-
-    // Animate funnel/bar widths inside mocks on enter
-    ScrollTrigger.batch(".mock__funnel span", {
-      start: "top 90%",
-      onEnter: (els) => gsap.from(els, { scaleX: 0, transformOrigin: "left", duration: 0.9, stagger: 0.08, ease: "power3.out" }),
-    });
+      ScrollTrigger.batch(".mock__funnel span", {
+        start: "top 90%",
+        onEnter: (els) => gsap.from(els, { scaleX: 0, transformOrigin: "left", duration: 0.9, stagger: 0.08, ease: "power3.out" }),
+      });
+    }
   }
 
   /* ---------- Animated counters ---------- */
