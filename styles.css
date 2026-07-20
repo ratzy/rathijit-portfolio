@@ -1210,7 +1210,7 @@ html.js [data-reveal-lines] .rl-inner { display: block; translate: 0 110%; trans
 html.js [data-reveal-lines].is-in .rl-inner { translate: 0 0; }
 
 html.js [data-stagger] > * {
-  opacity: 1; translate: 0 48px;
+  opacity: 0; translate: 0 48px;
   transition: opacity .8s var(--ease), translate .8s var(--ease);
 }
 html.js [data-stagger].is-in > * { opacity: 1; translate: 0 0; }
