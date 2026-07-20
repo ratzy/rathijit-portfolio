@@ -418,9 +418,29 @@ section { padding-inline: var(--pad); }
 .carousel__bar i { display: block; height: 100%; width: 0; background: var(--action); }
 .carousel__bar i.run { animation: carousel-fill var(--dur, 3800ms) linear forwards; }
 @keyframes carousel-fill { from { width: 0; } to { width: 100%; } }
-.carousel__dots { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 3; display: flex; justify-content: center; gap: 7px; }
-.carousel__dots button { width: 7px; height: 7px; border-radius: 50%; border: none; padding: 0; background: rgba(255,255,255,0.4); cursor: pointer; transition: transform .4s var(--ease), background-color .4s var(--ease); }
-.carousel__dots button.is-active { background: var(--action); transform: scale(1.5); }
+/* slide counter — current / total, bottom-left */
+.carousel__count {
+  position: absolute; left: 18px; bottom: 16px; z-index: 3;
+  display: flex; align-items: flex-end; gap: 5px;
+  font-family: var(--font-mono); font-weight: 300; font-size: 0.9rem;
+  letter-spacing: 0.04em; color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+}
+.cc__cur { position: relative; display: inline-block; width: 1.7em; height: 1.2em; overflow: hidden; }
+.cc__num { position: absolute; left: 0; bottom: 0; display: block; will-change: transform, opacity; }
+.cc__sep, .cc__total { opacity: 0.5; }
+
+/* prev / next arrows — tertiary-button style, bottom-right */
+.carousel__nav { position: absolute; right: 14px; bottom: 16px; z-index: 4; display: flex; gap: 8px; }
+.carousel__arrow {
+  width: 42px; height: 42px; display: grid; place-items: center; padding: 0;
+  border: 1px solid rgba(255,255,255,0.45); border-radius: 12px;
+  background: rgba(18,18,22,0.4); backdrop-filter: blur(8px);
+  color: #fff; cursor: pointer; will-change: transform;
+  transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), box-shadow .35s var(--ease);
+}
+.carousel__arrow:hover { background: var(--action); color: var(--action-ink); border-color: var(--action); box-shadow: 0 10px 26px -10px rgba(255,210,63,0.55); }
+@media (hover: none), (pointer: coarse) { .carousel__arrow { background: rgba(18,18,22,0.55); } }
 
 @media (max-width: 820px) {
   .offclock { grid-template-columns: 1fr; }

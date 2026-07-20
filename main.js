@@ -161,21 +161,27 @@
     document.querySelectorAll("[data-carousel]").forEach((root) => {
       const slides = Array.from(root.querySelectorAll(".carousel__slide"));
       if (slides.length < 2) return;
-      const dotsWrap = root.querySelector(".carousel__dots");
       const bar = root.querySelector(".carousel__bar i");
+      const countCur = root.querySelector(".cc__cur");
+      const totalEl = root.querySelector(".cc__total");
       const INTERVAL = 3800;
       let i = 0, timer = null, paused = false;
 
-      // build dots
-      const dots = slides.map((_, idx) => {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.setAttribute("aria-label", "Show photo " + (idx + 1));
-        if (idx === 0) b.classList.add("is-active");
-        b.addEventListener("click", () => { go(idx); restart(); });
-        dotsWrap && dotsWrap.appendChild(b);
-        return b;
-      });
+      const pad = (n) => String(n + 1).padStart(2, "0");
+      if (totalEl) totalEl.textContent = pad(slides.length - 1);
+
+      // Roll the current-slide number on ONE element: pull the old value down &
+      // out, swap the number, then pull the new value up from the bottom.
+      const numEl = countCur && countCur.querySelector(".cc__num");
+      function setCount(n) {
+        if (!numEl) return;
+        const label = pad(n);
+        if (REDUCED || !hasGSAP) { numEl.textContent = label; return; }
+        gsap.timeline()
+          .to(numEl, { yPercent: 110, opacity: 0, duration: 0.26, ease: "power2.in" })
+          .add(() => { numEl.textContent = label; })
+          .fromTo(numEl, { yPercent: 110, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.42, ease: "power3.out" });
+      }
 
       function go(n) {
         const prev = i;
@@ -185,8 +191,7 @@
         slides[prev].classList.add("is-prev");
         slides[i].classList.remove("is-prev");
         slides[i].classList.add("is-active");
-        dots[prev] && dots[prev].classList.remove("is-active");
-        dots[i] && dots[i].classList.add("is-active");
+        setCount(i);
       }
 
       function armBar() {
@@ -196,13 +201,23 @@
         void bar.offsetWidth; // reflow to restart animation
         if (!paused) bar.classList.add("run");
       }
+      // prev / next arrows
+      const prevBtn = root.querySelector("[data-carousel-prev]");
+      const nextBtn = root.querySelector("[data-carousel-next]");
+      if (prevBtn) prevBtn.addEventListener("click", () => { go(i - 1); restart(); });
+      if (nextBtn) nextBtn.addEventListener("click", () => { go(i + 1); restart(); });
+
       function tick() { go(i + 1); armBar(); }
       function start() { if (REDUCED) return; stop(); armBar(); timer = setInterval(tick, INTERVAL); }
       function stop() { clearInterval(timer); timer = null; }
       function restart() { start(); }
 
-      root.addEventListener("mouseenter", () => { paused = true; stop(); if (bar) bar.classList.remove("run"); });
-      root.addEventListener("mouseleave", () => { paused = false; start(); });
+      // Pause-on-hover is desktop only — on touch devices a tap would leave
+      // it stuck paused, so we skip it there entirely.
+      if (!IS_TOUCH) {
+        root.addEventListener("mouseenter", () => { paused = true; stop(); if (bar) bar.classList.remove("run"); });
+        root.addEventListener("mouseleave", () => { paused = false; start(); });
+      }
       document.addEventListener("visibilitychange", () => { if (document.hidden) stop(); else if (!paused) start(); });
 
       start();
