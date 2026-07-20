@@ -1,0 +1,26 @@
+# Static portfolio — no build step, served from the repo root.
+[build]
+  publish = "."
+  command = ""
+
+# Serve the case-study pages at clean, extension-less URLs.
+# status = 200 rewrites the content while keeping the pretty URL in the bar.
+[[redirects]]
+  from = "/omniverse"
+  to = "/omniverse.html"
+  status = 200
+
+[[redirects]]
+  from = "/assistedge"
+  to = "/assistedge.html"
+  status = 200
+
+[[redirects]]
+  from = "/finacle"
+  to = "/finacle.html"
+  status = 200
+
+[[redirects]]
+  from = "/just16"
+  to = "/just16.html"
+  status = 200
